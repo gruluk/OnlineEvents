@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  OnlineEvents
+
+  Created by Luka Grujic on 02/01/2024.
+  
+*/
+
+"Upcoming Registrations" = "Kommende Registreringer";
+"Registrations" = "Registreringer";
+"Events" = "Arrangementer";
+"Scheduled for: " = "Planlagt: ";
+"Upcoming Reminders" = "Kommende Påminnelser";
+"Scheduled for: %@" = "Planlagt for: %@";
+"Registration Starts" = "Registrering starter";
+"Event page" = "Arrangementssiden";
+"Set a registration reminder for %@" = "Sett en påminnelse for registrering for %@";
+"Reminder Time" = "Påminnelsestid";
+"15 minutes before" = "15 minutter før";
+"30 minutes before" = "30 minutter før";
+"1 day before" = "1 dag før";
+"Set Reminder" = "Sett Påminnelse";
+"Registration has passed" = "Registrering har passert";
+"Invalid Reminder Time" = "Ugyldig Påminnelsestid";
+"The selected reminder time has already passed." = "Den valgte påminnelsestiden har allerede passert.";
+"OK" = "OK";
+"Registration start has already passed" = "Registreringsstart har allerede passert";
+"Reminder for %@" = "Påminnelse for %@";
+"Registration is starting soon!" = "Registreringen starter snart!";
+"View Mode" = "Visningsmodus";
+"List" = "Liste";
+"Calendar" = "Kalender";
+"Upcoming Events" = "Kommende Arrangementer";
+"Sun" = "Søn";
+"Mon" = "Man";
+"Tue" = "Tir";
+"Wed" = "Ons";
+"Thu" = "Tor";
+"Fri" = "Fre";
+"Sat" = "Lør";
+"Start: %@" = "Start: %@";
+"Registration: %@" = "Registrering: %@";
+"Registration: No time yet" = "Registrering: Ingen tid satt";
+"Invalid Date" = "Ugyldig dato";
+
+/* Onboarding */
+
+"Welcome to OnlineEvents!" = "Velkommen til OnlineEvents!";
+"The place to see all Online events" = "Stedet for å se alle Online arrangementer";
+"Registrations" = "Registreringer";
+"See upcoming registrations!" = "Se kommende registreringer!";
+"Events" = "Arrangementer";
+"See upcoming events!" = "Se kommende arrangementer!";
+"Details" = "Detaljer";
+"See details about an event!" = "Se detaljer for et arrangement";
+"Reminders" = "Påminnelser";
+"Click the bell to get reminded about the registration!" = "Klikk på bjellen for å bli påminnet om registreringen!";
+"Manage Reminders" = "Håndtere Påminnelser";
+"Click on the top bell to see your planned reminders and to delete them" = "Klikk på bjellen øverst for å se dine planlagte påminnelser og for å slette dem!";
+"Next" = "Neste";
+"Get Started" = "Kom i Gang";
+
+/* HomeView */
+
+"Show More" = "Vis mer";
+"Home" = "Hjem";
+
+/* Event types */
+
+"Social" = "Sosialt";
+"Company event" = "Bedriftsarrangement";
+"Course" = "Kurs";
+
+"No Upcoming Registrations" = "Ingen kommende registreringer";
+
+/* Career */
+
+"Career" = "Karriere";
+
