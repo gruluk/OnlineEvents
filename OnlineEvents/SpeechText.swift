@@ -30,5 +30,6 @@ struct SpeechTexts {
         "Se der står en fyllehund!",
         "Mine herre Lambo",
         "Er du quicksort? For du deler hjertet mitt i to på rekordtid",
+        "Stemningsrapport?",
     ]
 }
