@@ -46,7 +46,7 @@ struct EventItemView: View {
             } else {
                 HStack {
                     eventImageView
-                        .frame(width: 100, height: 100)
+                        .frame(width: 60, height: 60)
                         .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
