@@ -115,7 +115,7 @@ struct BugReportView: View {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Image(systemName: "xmark")
+                    Image(systemName: "arrow.down")
                         .imageScale(.large)
                         .foregroundColor(.black)
                 }

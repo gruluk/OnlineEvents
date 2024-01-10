@@ -11,7 +11,7 @@ struct NotificationsView: View {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Image(systemName: "xmark")
+                    Image(systemName: "arrow.down")
                         .foregroundColor(Color.white)
                         .padding()
                         .font(.title3)

@@ -168,7 +168,9 @@ struct HomeView: View {
                 }
             }
             .sheet(isPresented: $showingBugReportSheet) {
-                BugReportView()
+                NavigationView {
+                    BugReportView()
+                }
             }
             .onAppear {
                 viewModel.fetchEvents()
