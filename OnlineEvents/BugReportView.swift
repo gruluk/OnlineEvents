@@ -52,24 +52,19 @@ struct BugReportView: View {
                 .padding(.top, 20)
                 
                 VStack {
-                    
                     Text(NSLocalizedString("OnlineEvents is the app to easily get an overview of Online events.\n\n-See details about events\n-Get reminders for upcoming registrations!\n-See upcoming career opportunities.", comment: ""))
                         .multilineTextAlignment(.leading)
-                        .padding()
-                        .foregroundColor(Color(hex: "#0D5474"))
                 }
                 .padding()
-                .padding(.horizontal)
-                .padding(.top, 10)
-                .padding(.bottom, 10)
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(12)
                 
+                // Feedback Button
                 Button(action: openFeedbackURL) {
                     HStack {
                         Text(NSLocalizedString("Give some feedback or report a bug", comment: ""))
                             .fontWeight(.semibold)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(.white)
                         
                         Image(systemName: "chevron.right")
                             .foregroundColor(.white)
@@ -79,12 +74,12 @@ struct BugReportView: View {
                 .background(Color(hex: "#0D5474"))
                 .cornerRadius(12)
 
+                // Authors VStack
                 VStack {
-                    Text(NSLocalizedString("AUTHORS", comment: ""))
+                    Text(NSLocalizedString("Developers", comment: ""))
                         .font(.headline)
-                        .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
+                        .foregroundColor(Color(hex: "#0D5474"))
                     
                     HStack {
                         Image("Graf") // Replace with the actual image
@@ -108,10 +103,10 @@ struct BugReportView: View {
                     .padding()
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(12)
-                    .padding(.horizontal)
                 }
                 Spacer()
             }
+            .padding()
         }
         .navigationTitle("About")
         .navigationBarTitleDisplayMode(.inline)
