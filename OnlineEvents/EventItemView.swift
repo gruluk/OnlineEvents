@@ -49,6 +49,8 @@ struct EventItemView: View {
                         .frame(width: 60, height: 60)
                         .cornerRadius(8)
                     
+                    Spacer(minLength: 20)
+                    
                     VStack(alignment: .leading) {
                         Text(eventTypeTextAndColor.text)
                             .font(.caption)

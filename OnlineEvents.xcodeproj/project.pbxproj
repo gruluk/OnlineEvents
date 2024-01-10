@@ -22,9 +22,6 @@
 		E6C9ECBC2B41B69A003F107A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECBB2B41B69A003F107A /* ContentView.swift */; };
 		E6C9ECBE2B41B69B003F107A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C9ECBD2B41B69B003F107A /* Assets.xcassets */; };
 		E6C9ECC12B41B69B003F107A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C9ECC02B41B69B003F107A /* Preview Assets.xcassets */; };
-		E6C9ECCB2B41B69B003F107A /* OnlineEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECCA2B41B69B003F107A /* OnlineEventsTests.swift */; };
-		E6C9ECD52B41B69B003F107A /* OnlineEventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECD42B41B69B003F107A /* OnlineEventsUITests.swift */; };
-		E6C9ECD72B41B69B003F107A /* OnlineEventsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECD62B41B69B003F107A /* OnlineEventsUITestsLaunchTests.swift */; };
 		E6C9ECE62B41B78F003F107A /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECE52B41B78F003F107A /* EventItemView.swift */; };
 		E6C9ECEA2B41B8E2003F107A /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECE92B41B8E2003F107A /* EventResponse.swift */; };
 		E6C9ECEC2B41B914003F107A /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9ECEB2B41B914003F107A /* EventViewModel.swift */; };
@@ -38,23 +35,6 @@
 		E6FA0DA82B4316C000BD4AA0 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FA0DA72B4316C000BD4AA0 /* NotificationViewModel.swift */; };
 		E6FA0DAA2B4316DB00BD4AA0 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FA0DA92B4316DB00BD4AA0 /* NotificationsView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E6C9ECC72B41B69B003F107A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6C9ECAE2B41B69A003F107A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E6C9ECB52B41B69A003F107A;
-			remoteInfo = OnlineEvents;
-		};
-		E6C9ECD12B41B69B003F107A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6C9ECAE2B41B69A003F107A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E6C9ECB52B41B69A003F107A;
-			remoteInfo = OnlineEvents;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E6BF369A2B43514600E0B4D2 /* Embed Foundation Extensions */ = {
@@ -89,9 +69,7 @@
 		E6C9ECBB2B41B69A003F107A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E6C9ECBD2B41B69B003F107A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6C9ECC02B41B69B003F107A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E6C9ECC62B41B69B003F107A /* OnlineEventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineEventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C9ECCA2B41B69B003F107A /* OnlineEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineEventsTests.swift; sourceTree = "<group>"; };
-		E6C9ECD02B41B69B003F107A /* OnlineEventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineEventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C9ECD42B41B69B003F107A /* OnlineEventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineEventsUITests.swift; sourceTree = "<group>"; };
 		E6C9ECD62B41B69B003F107A /* OnlineEventsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineEventsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E6C9ECE52B41B78F003F107A /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
@@ -110,20 +88,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E6C9ECB32B41B69A003F107A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6C9ECC32B41B69B003F107A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6C9ECCD2B41B69B003F107A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -164,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				E6C9ECB62B41B69A003F107A /* OnlineEvents.app */,
-				E6C9ECC62B41B69B003F107A /* OnlineEventsTests.xctest */,
-				E6C9ECD02B41B69B003F107A /* OnlineEventsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,42 +213,6 @@
 			productReference = E6C9ECB62B41B69A003F107A /* OnlineEvents.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E6C9ECC52B41B69B003F107A /* OnlineEventsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E6C9ECDD2B41B69B003F107A /* Build configuration list for PBXNativeTarget "OnlineEventsTests" */;
-			buildPhases = (
-				E6C9ECC22B41B69B003F107A /* Sources */,
-				E6C9ECC32B41B69B003F107A /* Frameworks */,
-				E6C9ECC42B41B69B003F107A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E6C9ECC82B41B69B003F107A /* PBXTargetDependency */,
-			);
-			name = OnlineEventsTests;
-			productName = OnlineEventsTests;
-			productReference = E6C9ECC62B41B69B003F107A /* OnlineEventsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E6C9ECCF2B41B69B003F107A /* OnlineEventsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E6C9ECE02B41B69B003F107A /* Build configuration list for PBXNativeTarget "OnlineEventsUITests" */;
-			buildPhases = (
-				E6C9ECCC2B41B69B003F107A /* Sources */,
-				E6C9ECCD2B41B69B003F107A /* Frameworks */,
-				E6C9ECCE2B41B69B003F107A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E6C9ECD22B41B69B003F107A /* PBXTargetDependency */,
-			);
-			name = OnlineEventsUITests;
-			productName = OnlineEventsUITests;
-			productReference = E6C9ECD02B41B69B003F107A /* OnlineEventsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -299,14 +225,6 @@
 				TargetAttributes = {
 					E6C9ECB52B41B69A003F107A = {
 						CreatedOnToolsVersion = 15.0;
-					};
-					E6C9ECC52B41B69B003F107A = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = E6C9ECB52B41B69A003F107A;
-					};
-					E6C9ECCF2B41B69B003F107A = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = E6C9ECB52B41B69A003F107A;
 					};
 				};
 			};
@@ -325,8 +243,6 @@
 			projectRoot = "";
 			targets = (
 				E6C9ECB52B41B69A003F107A /* OnlineEvents */,
-				E6C9ECC52B41B69B003F107A /* OnlineEventsTests */,
-				E6C9ECCF2B41B69B003F107A /* OnlineEventsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -340,20 +256,6 @@
 				E65D192D2B44A42700A68346 /* Localizable.strings in Resources */,
 				E6C9ECC12B41B69B003F107A /* Preview Assets.xcassets in Resources */,
 				E6C9ECBE2B41B69B003F107A /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6C9ECC42B41B69B003F107A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6C9ECCE2B41B69B003F107A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,37 +292,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6C9ECC22B41B69B003F107A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6C9ECCB2B41B69B003F107A /* OnlineEventsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6C9ECCC2B41B69B003F107A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6C9ECD72B41B69B003F107A /* OnlineEventsUITestsLaunchTests.swift in Sources */,
-				E6C9ECD52B41B69B003F107A /* OnlineEventsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E6C9ECC82B41B69B003F107A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E6C9ECB52B41B69A003F107A /* OnlineEvents */;
-			targetProxy = E6C9ECC72B41B69B003F107A /* PBXContainerItemProxy */;
-		};
-		E6C9ECD22B41B69B003F107A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E6C9ECB52B41B69A003F107A /* OnlineEvents */;
-			targetProxy = E6C9ECD12B41B69B003F107A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E65D192F2B44A42700A68346 /* Localizable.strings */ = {
@@ -616,82 +488,6 @@
 			};
 			name = Release;
 		};
-		E6C9ECDE2B41B69B003F107A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UASXCG345J;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Luka.OnlineEventsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineEvents.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OnlineEvents";
-			};
-			name = Debug;
-		};
-		E6C9ECDF2B41B69B003F107A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UASXCG345J;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Luka.OnlineEventsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineEvents.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OnlineEvents";
-			};
-			name = Release;
-		};
-		E6C9ECE12B41B69B003F107A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UASXCG345J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Luka.OnlineEventsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OnlineEvents;
-			};
-			name = Debug;
-		};
-		E6C9ECE22B41B69B003F107A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UASXCG345J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Luka.OnlineEventsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OnlineEvents;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -709,24 +505,6 @@
 			buildConfigurations = (
 				E6C9ECDB2B41B69B003F107A /* Debug */,
 				E6C9ECDC2B41B69B003F107A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E6C9ECDD2B41B69B003F107A /* Build configuration list for PBXNativeTarget "OnlineEventsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6C9ECDE2B41B69B003F107A /* Debug */,
-				E6C9ECDF2B41B69B003F107A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E6C9ECE02B41B69B003F107A /* Build configuration list for PBXNativeTarget "OnlineEventsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6C9ECE12B41B69B003F107A /* Debug */,
-				E6C9ECE22B41B69B003F107A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
