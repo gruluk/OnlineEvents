@@ -64,7 +64,7 @@ struct EventItemView: View {
                             .font(.headline)
                             .foregroundColor(.black)
 
-                        dateTimeView // Use the new view here
+                        dateTimeView
                             .foregroundColor(.black)
                     }
                     

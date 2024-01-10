@@ -21,10 +21,10 @@ private let onBoardingSteps = [
 
 struct OnboardingView: View {
     @State private var currentStep = 0
-    @Binding var onboardingCompleted: Bool  // Add this binding variable
+    @Binding var onboardingCompleted: Bool
     var onDone: () -> Void
     
-    @AppStorage("welcomScreenShown") //UserDefaults
+    @AppStorage("welcomScreenShown")
     var welcomeScreenShown: Bool = false
     
     init(onboardingCompleted: Binding<Bool>, onDone: @escaping () -> Void) {

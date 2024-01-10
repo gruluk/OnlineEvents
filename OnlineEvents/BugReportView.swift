@@ -53,7 +53,7 @@ struct BugReportView: View {
                 
                 VStack {
                     
-                    Text("OnlineEvents is the app to easily get an overview of Online events.\n\n-See details about events\n-Get reminders for upcoming registrations!\n-See upcoming career opportunities.")
+                    Text(NSLocalizedString("OnlineEvents is the app to easily get an overview of Online events.\n\n-See details about events\n-Get reminders for upcoming registrations!\n-See upcoming career opportunities.", comment: ""))
                         .multilineTextAlignment(.leading)
                         .padding()
                         .foregroundColor(Color(hex: "#0D5474"))
@@ -65,10 +65,9 @@ struct BugReportView: View {
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(12)
                 
-                // Feedback Button
                 Button(action: openFeedbackURL) {
                     HStack {
-                        Text("Give some feedback or report a bug")
+                        Text(NSLocalizedString("Give some feedback or report a bug", comment: ""))
                             .fontWeight(.semibold)
                             .foregroundColor(Color.white)
                         
@@ -80,9 +79,8 @@ struct BugReportView: View {
                 .background(Color(hex: "#0D5474"))
                 .cornerRadius(12)
 
-                // Author Section
                 VStack {
-                    Text("AUTHORS")
+                    Text(NSLocalizedString("AUTHORS", comment: ""))
                         .font(.headline)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -102,7 +100,7 @@ struct BugReportView: View {
                                 .fontWeight(.medium)
                                 .foregroundColor(Color(hex: "#0D5474"))
                             
-                            Text("Hi there! 👋 I'm the author of OnlineEvents.\nI'm passionate for Online and making digital solutions that feel intuitive.")
+                            Text(NSLocalizedString("Hi there! 👋 I'm the author of OnlineEvents.\nI'm passionate for Online and making digital solutions that feel intuitive.", comment: ""))
                                 .font(.caption)
                                 .foregroundColor(Color(hex: "#0D5474").opacity(0.7))
                         }

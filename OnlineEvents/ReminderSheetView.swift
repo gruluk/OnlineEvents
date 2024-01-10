@@ -3,6 +3,7 @@ import SwiftUI
 struct ReminderSheetView: View {
     var event: Event
     var isRegistrationStartInFuture: Bool
+    var onReminderSet: (() -> Void)?
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedTimeInterval = 15 * 60 // Default to 15 minutes
     @State private var showAlert = false
@@ -66,9 +67,11 @@ struct ReminderSheetView: View {
             showAlert = true
             return
         }
-
+        
         NotificationManager.shared.scheduleNotification(for: event, at: reminderDate)
 
+        onReminderSet?()
+        
         presentationMode.wrappedValue.dismiss()
     }
 
