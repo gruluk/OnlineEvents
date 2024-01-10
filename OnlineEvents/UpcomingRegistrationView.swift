@@ -2,7 +2,6 @@ import SwiftUI
 
 struct UpcomingRegistrationsView: View {
     @StateObject var viewModel = EventViewModel()
-    @State private var showingNotificationsSheet = false
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(hex: "#0D5474"))]
@@ -33,19 +32,6 @@ struct UpcomingRegistrationsView: View {
             }
         }
         .navigationTitle(NSLocalizedString("Upcoming Registrations", comment: "Title for registration view"))
-        .sheet(isPresented: $showingNotificationsSheet) {
-            NotificationsView()
-        }
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: {
-                    self.showingNotificationsSheet = true
-                }) {
-                    Image(systemName: "bell")
-                        .foregroundColor(Color(hex: "#0D5474"))
-                }
-            }
-        }
         .onAppear {
             viewModel.fetchEvents()
         }

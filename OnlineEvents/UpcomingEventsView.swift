@@ -2,7 +2,6 @@ import SwiftUI
 
 struct UpcomingEventsView: View {
     @StateObject var viewModel = EventViewModel()
-    @State private var showingNotificationsSheet = false
     @State private var selectedViewMode = ViewMode.list  // State for the selected view mode
 
     enum ViewMode {
@@ -48,17 +47,6 @@ struct UpcomingEventsView: View {
             }
         }
         .navigationTitle(NSLocalizedString("Upcoming Events", comment: "Navigation title for upcoming events"))
-        .navigationBarItems(trailing:
-            Button(action: {
-                self.showingNotificationsSheet = true
-            }) {
-                Image(systemName: "bell")
-                    .foregroundColor(Color(hex: "#0D5474"))
-            }
-        )
-        .sheet(isPresented: $showingNotificationsSheet) {
-            NotificationsView()
-        }
         .onAppear {
             viewModel.fetchEvents()
         }
