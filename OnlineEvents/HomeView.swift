@@ -137,7 +137,7 @@ struct HomeView: View {
                     Button(action: {
                         self.showingBugReportSheet = true
                     }) {
-                        Image(systemName: "ladybug")
+                        Image(systemName: "info.circle")
                             .foregroundColor(Color(hex: "#0D5474"))
                     }
                     Button(action: {
