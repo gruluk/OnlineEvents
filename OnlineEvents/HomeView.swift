@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel = EventViewModel()
     @StateObject var careerViewModel = CareerViewModel()
+    @StateObject var notificationViewModel = NotificationViewModel()
     @State private var showingNotificationsSheet = false
     @State private var showingBugReportSheet = false
     @State private var showSpeechBubble = false
@@ -12,6 +13,11 @@ struct HomeView: View {
         // Apply to all navigation bars in the app
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(hex: "#0D5474"))]
         UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+    }
+    
+    // Badge count for upcoming registrations
+    var upcomingRegistrationsCount: Int {
+        viewModel.nextThreeRegistrations.count
     }
 
     var body: some View {
@@ -127,7 +133,7 @@ struct HomeView: View {
                     }
                 }
                 .padding(.top, 20)
-                .sheet(isPresented: $showingNotificationsSheet) {
+                .sheet(isPresented: $showingNotificationsSheet, onDismiss: refreshNotifications) {
                     NotificationsView()
                 }
             }
@@ -143,8 +149,21 @@ struct HomeView: View {
                     Button(action: {
                         self.showingNotificationsSheet = true
                     }) {
-                        Image(systemName: "bell")
-                            .foregroundColor(Color(hex: "#0D5474"))
+                        ZStack {
+                            Image(systemName: "bell")
+                                .foregroundColor(Color(hex: "#0D5474"))
+
+                            // Badge view
+                            if notificationViewModel.notifications.count > 0 {
+                                Text("\(notificationViewModel.notifications.count)")
+                                    .font(.caption2)
+                                    .foregroundColor(.white)
+                                    .padding(5)
+                                    .background(Color(hex: "#0D5474"))
+                                    .clipShape(Circle())
+                                    .offset(x: 10, y: -10)
+                            }
+                        }
                     }
                 }
             }
@@ -154,9 +173,14 @@ struct HomeView: View {
             .onAppear {
                 viewModel.fetchEvents()
                 careerViewModel.fetchCareerOpportunities()
+                notificationViewModel.fetchNotifications()
             }
         }
         .accentColor(Color(hex: "#0D5474"))
+    }
+    
+    private func refreshNotifications() {
+        notificationViewModel.fetchNotifications()
     }
 }
 
