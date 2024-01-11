@@ -117,7 +117,7 @@ struct BugReportView: View {
                 }) {
                     Image(systemName: "arrow.down")
                         .imageScale(.large)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "#0D5474"))
                 }
             }
         }
