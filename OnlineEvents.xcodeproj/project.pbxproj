@@ -98,13 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E62247412B4DC02200E0F236 /* ViewModals */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModals;
-			sourceTree = "<group>";
-		};
 		E6BF36862B43514500E0B4D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				E69CFA952B51605900B37B5E /* Info.plist */,
-				E62247412B4DC02200E0F236 /* ViewModals */,
 				E6C9ECB92B41B69A003F107A /* OnlineEventsApp.swift */,
 				E6C9ECBB2B41B69A003F107A /* ContentView.swift */,
 				E6BF36A42B446A4E00E0B4D2 /* OnboardingView.swift */,
@@ -434,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"OnlineEvents/Preview Content\"";
 				DEVELOPMENT_TEAM = UASXCG345J;
 				ENABLE_PREVIEWS = YES;
@@ -465,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"OnlineEvents/Preview Content\"";
 				DEVELOPMENT_TEAM = UASXCG345J;
 				ENABLE_PREVIEWS = YES;

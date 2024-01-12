@@ -28,9 +28,17 @@ struct CalendarView: View {
     private var month: [String] {
         let daysInMonth = Calendar.current.range(of: .day, in: .month, for: currentDate)!.count
         let firstDayOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: currentDate))!
-        let firstWeekday = Calendar.current.component(.weekday, from: firstDayOfMonth)
+        
+        var calendar = Calendar.current
+        calendar.firstWeekday = 2 // Set Monday as the first day of the week
+        let firstWeekday = calendar.component(.weekday, from: firstDayOfMonth)
+        
+        var offset = firstWeekday - calendar.firstWeekday
+        if offset < 0 {
+            offset += 7 // Adjust for when the first day of the month is before Monday in the current locale
+        }
 
-        var month = Array(repeating: "", count: firstWeekday - 1)
+        var month = Array(repeating: "", count: offset)
         month += (1...daysInMonth).map { String($0) }
         return month
     }
@@ -38,8 +46,10 @@ struct CalendarView: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: { self.changeMonth(by: -1) }) {
-                    Image(systemName: "chevron.left")
+                if canGoBackToPreviousMonth() {
+                    Button(action: { self.changeMonth(by: -1) }) {
+                        Image(systemName: "chevron.left")
+                    }
                 }
 
                 Spacer()
@@ -57,7 +67,7 @@ struct CalendarView: View {
             
             // Days of the week
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 15) {
-                ForEach(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], id: \.self) { day in
+                ForEach(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], id: \.self) { day in
                     Text(NSLocalizedString(day, comment: "Day of the week")).fontWeight(.bold)
                 }
             }
@@ -73,16 +83,16 @@ struct CalendarView: View {
                             Spacer()
                             Text(day)
                             Circle()
-                                .frame(width: 5, height: 5)
-                                .foregroundColor(dayHasEvent(day: day) ? .red : .clear)
+                                .frame(width: 10, height: 10)
+                                .foregroundColor(dayHasEvent(day: day) ? Color(hex: "#0D5474") : .clear)
                             Spacer()
                         }
                         .frame(width: 40, height: 40)
-                        .background(day == selectedDay ? Color(hex: "#F9B759") : (isToday(day: day) ? Color(hex: "#0D5474") : Color.gray.opacity(0.3)))
+                        .background(colorForDay(day: day))
                         .cornerRadius(5)
                         .foregroundColor(isToday(day: day) ? .white : .black)
                         .onTapGesture {
-                            if day != "" {
+                            if day != "" && !isDateInPast(day: day) {
                                 self.selectedDay = day
                             }
                         }
@@ -128,8 +138,52 @@ struct CalendarView: View {
     }
 
     private func changeMonth(by amount: Int) {
-        if let newDate = Calendar.current.date(byAdding: .month, value: amount, to: currentDate) {
+        let newDate = Calendar.current.date(byAdding: .month, value: amount, to: currentDate)
+        let now = Date()
+
+        // Check if newDate is in the past compared to the current system month and year
+        if let newDate = newDate, Calendar.current.compare(newDate, to: now, toGranularity: .month) != .orderedAscending {
             currentDate = newDate
+        }
+    }
+    
+    private func canGoBackToPreviousMonth() -> Bool {
+        let now = Date()
+        return Calendar.current.compare(currentDate, to: now, toGranularity: .month) == .orderedDescending
+    }
+    
+    private func isDateInPast(day: String) -> Bool {
+        guard let dayInt = Int(day) else { return false }
+
+        // Get the date components for the current date
+        var currentComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        // Reset the hour, minute, second components to ensure we're comparing only dates
+        currentComponents.hour = 0
+        currentComponents.minute = 0
+        currentComponents.second = 0
+        currentComponents.nanosecond = 0
+
+        // Get the current date with time reset
+        guard let today = Calendar.current.date(from: currentComponents) else { return false }
+
+        // Get the date for the given day
+        var dayComponents = Calendar.current.dateComponents([.year, .month], from: currentDate)
+        dayComponents.day = dayInt
+        guard let dayDate = Calendar.current.date(from: dayComponents) else { return false }
+
+        // Compare the day date with today's date
+        return dayDate < today
+    }
+
+    private func colorForDay(day: String) -> Color {
+        if day == selectedDay {
+            return Color(hex: "#F9B759")
+        } else if isToday(day: day) {
+            return Color(hex: "#0D5474")
+        } else if isDateInPast(day: day) {
+            return Color.gray.opacity(0.8) // Darker gray for past dates
+        } else {
+            return Color.gray.opacity(0.3)
         }
     }
 }
