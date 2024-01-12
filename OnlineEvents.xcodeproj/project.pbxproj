@@ -59,6 +59,7 @@
 		E67F6A512B4D57CC002A9626 /* CareerCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerCarouselView.swift; sourceTree = "<group>"; };
 		E67F6A532B4D583B002A9626 /* CareerOpportunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerOpportunity.swift; sourceTree = "<group>"; };
 		E67F6A552B4D59F8002A9626 /* CareerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerViewModel.swift; sourceTree = "<group>"; };
+		E69CFA952B51605900B37B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E6BF36872B43514500E0B4D2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E6BF36892B43514500E0B4D2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		E6BF369E2B442B2100E0B4D2 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		E6C9ECB82B41B69A003F107A /* OnlineEvents */ = {
 			isa = PBXGroup;
 			children = (
+				E69CFA952B51605900B37B5E /* Info.plist */,
 				E62247412B4DC02200E0F236 /* ViewModals */,
 				E6C9ECB92B41B69A003F107A /* OnlineEventsApp.swift */,
 				E6C9ECBB2B41B69A003F107A /* ContentView.swift */,
@@ -437,7 +439,7 @@
 				DEVELOPMENT_TEAM = UASXCG345J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = OnlineEvents/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -468,7 +470,7 @@
 				DEVELOPMENT_TEAM = UASXCG345J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = OnlineEvents/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
