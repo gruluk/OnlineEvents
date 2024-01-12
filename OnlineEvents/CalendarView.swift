@@ -102,6 +102,12 @@ struct CalendarView: View {
             .onAppear {
                 print("Month array: \(month)")
             }
+            .gesture(
+                DragGesture()
+                    .onEnded { value in
+                        self.handleSwipe(translation: value.translation.width)
+                    }
+            )
             
             if let day = selectedDay, let dayInt = Int(day), let eventsForDay = eventsForDay(dayInt) {
                 VStack {
@@ -184,6 +190,14 @@ struct CalendarView: View {
             return Color.gray.opacity(0.8) // Darker gray for past dates
         } else {
             return Color.gray.opacity(0.3)
+        }
+    }
+    
+    private func handleSwipe(translation: CGFloat) {
+        if translation > 100 {
+            changeMonth(by: -1) // Swipe Right (Previous Month)
+        } else if translation < -100 {
+            changeMonth(by: 1) // Swipe Left (Next Month)
         }
     }
 }

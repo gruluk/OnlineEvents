@@ -163,7 +163,8 @@ struct EventDetailView: View {
         inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 
         let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "E, d MMM yyyy HH:mm"
+        // Removed the year component from the format
+        outputFormatter.dateFormat = "E, d MMM HH:mm"
 
         if let date = inputFormatter.date(from: dateString) {
             return outputFormatter.string(from: date)

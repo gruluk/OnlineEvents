@@ -82,7 +82,7 @@ struct BugReportView: View {
                         .foregroundColor(Color(hex: "#0D5474"))
                     
                     HStack {
-                        Image("Graf") // Replace with the actual image
+                        Image("ProfileLuka")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 60, height: 60)
@@ -108,7 +108,7 @@ struct BugReportView: View {
             }
             .padding()
         }
-        .navigationTitle("About")
+        .navigationTitle(NSLocalizedString("About", comment: ""))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
