@@ -31,7 +31,7 @@ struct UpcomingRegistrationsView: View {
                 }
             }
         }
-        .navigationTitle(NSLocalizedString("Upcoming Registrations", comment: "Title for registration view"))
+        .navigationTitle(NSLocalizedString("Next Registrations", comment: "Title for registration view"))
         .onAppear {
             viewModel.fetchEvents()
         }

@@ -30,7 +30,7 @@
 "View Mode" = "Visningsmodus";
 "List" = "Liste";
 "Calendar" = "Kalender";
-"Upcoming Events" = "Kommende Arrangementer";
+"Next Events" = "Kommende Arrangementer";
 "Sun" = "Søn";
 "Mon" = "Man";
 "Tue" = "Tir";
@@ -47,9 +47,9 @@
 
 "Welcome to OnlineEvents!" = "Velkommen til OnlineEvents!";
 "The place to see all Online events" = "Stedet for å se alle Online arrangementer";
-"Registrations" = "Registreringer";
+"Next Registrations" = "Neste Registreringer";
 "See upcoming registrations!" = "Se kommende registreringer!";
-"Events" = "Arrangementer";
+"Next Events" = "Neste Arrangementer";
 "See upcoming events!" = "Se kommende arrangementer!";
 "Details" = "Detaljer";
 "See details about an event!" = "Se detaljer for et arrangement";

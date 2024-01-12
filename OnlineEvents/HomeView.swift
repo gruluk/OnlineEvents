@@ -29,8 +29,8 @@ struct HomeView: View {
                     } else {
                         // Upcoming Registrations
                         HStack {
-                            Text(NSLocalizedString("Registrations", comment: "Section title for registrations"))
-                                .font(.title3)
+                            Text(NSLocalizedString("Next Registrations", comment: "Section title for registrations"))
+                                .font(.title2)
                                 .foregroundColor(Color(hex: "#0D5474"))
                                 .bold()
                             
@@ -62,8 +62,8 @@ struct HomeView: View {
 
                         // Upcoming Events
                         HStack {
-                            Text(NSLocalizedString("Events", comment: "Section title for events"))
-                                .font(.title3)
+                            Text(NSLocalizedString("Next Events", comment: "Section title for events"))
+                                .font(.title2)
                                 .foregroundColor(Color(hex: "#0D5474"))
                                 .bold()
                             
@@ -90,7 +90,7 @@ struct HomeView: View {
                         // Career carousel
                         HStack {
                             Text(NSLocalizedString("Career", comment: "Section title for career opportunities"))
-                                .font(.title3)
+                                .font(.title2)
                                 .foregroundColor(Color(hex: "#0D5474"))
                                 .bold()
 
