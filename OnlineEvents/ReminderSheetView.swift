@@ -58,21 +58,37 @@ struct ReminderSheetView: View {
                 dismissButton: .default(Text(NSLocalizedString("OK", comment: "Dismiss button text")))
             )
         }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(NSLocalizedString("Enable Notifications", comment: "Alert title for enabling notifications")),
+                message: Text(NSLocalizedString("Please enable notifications in settings to set a reminder.", comment: "Alert message for enabling notifications")),
+                dismissButton: .default(Text(NSLocalizedString("OK", comment: "Dismiss button text")))
+            )
+        }
     }
 
     private func scheduleNotification() {
-        guard let registrationStartStr = event.attendanceEvent?.registrationStart,
-              let registrationStartDate = ISO8601DateFormatter().date(from: registrationStartStr),
-              let reminderDate = calculateReminderDate(from: registrationStartDate, timeInterval: TimeInterval(selectedTimeInterval)) else {
-            showAlert = true
-            return
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            DispatchQueue.main.async {
+                if settings.authorizationStatus != .authorized {
+                    // User has not granted notification permissions
+                    showAlert = true
+                } else {
+                    // Proceed with scheduling the notification
+                    guard let registrationStartStr = event.attendanceEvent?.registrationStart,
+                          let registrationStartDate = ISO8601DateFormatter().date(from: registrationStartStr),
+                          let reminderDate = calculateReminderDate(from: registrationStartDate, timeInterval: TimeInterval(selectedTimeInterval)),
+                          reminderDate > Date() else {
+                        showAlert = true
+                        return
+                    }
+                    
+                    NotificationManager.shared.scheduleNotification(for: event, at: reminderDate)
+                    onReminderSet?()
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
         }
-        
-        NotificationManager.shared.scheduleNotification(for: event, at: reminderDate)
-
-        onReminderSet?()
-        
-        presentationMode.wrappedValue.dismiss()
     }
 
     private func calculateReminderDate(from date: Date, timeInterval: TimeInterval) -> Date? {

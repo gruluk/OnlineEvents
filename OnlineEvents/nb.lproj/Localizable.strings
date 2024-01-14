@@ -14,6 +14,9 @@
 "Scheduled for: %@" = "Planlagt for: %@";
 "Registration Starts" = "Registrering starter";
 "Event page" = "Arrangementssiden";
+
+/* Set reminder */
+
 "Set a registration reminder for %@" = "Sett en påminnelse for registrering for %@";
 "Reminder Time" = "Påminnelsestid";
 "15 minutes before" = "15 minutter før";
@@ -24,6 +27,10 @@
 "Invalid Reminder Time" = "Ugyldig Påminnelsestid";
 "The selected reminder time has already passed." = "Den valgte påminnelsestiden har allerede passert.";
 "OK" = "OK";
+"Enable Notifications" = "Slå på påminnelser";
+"Please enable notifications in the phone settings to set a reminder." = "Aktiver varsler i mobil-innstillinger for å angi en påminnelse.";
+
+
 "Registration start has already passed" = "Registreringsstart har allerede passert";
 "Reminder for %@" = "Påminnelse for %@";
 "Registration is starting soon!" = "Registreringen starter snart!";
