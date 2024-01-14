@@ -52,7 +52,7 @@ struct BugReportView: View {
                 .padding(.top, 20)
                 
                 VStack {
-                    Text(NSLocalizedString("OnlineEvents is the app to easily get an overview of Online events.\n\n-See details about events\n-Get reminders for upcoming registrations!\n-See upcoming career opportunities.", comment: ""))
+                    Text(NSLocalizedString("OnlineEvents is the app to easily get an overview of Online events.\n\nThe app is using the Online open API\n\n-See details about events\n-Get reminders for upcoming registrations!\n-See upcoming career opportunities.", comment: ""))
                         .multilineTextAlignment(.leading)
                 }
                 .padding()
@@ -95,7 +95,7 @@ struct BugReportView: View {
                                 .fontWeight(.medium)
                                 .foregroundColor(Color(hex: "#0D5474"))
                             
-                            Text(NSLocalizedString("Hi there! 👋 I'm the author of OnlineEvents.\nI'm passionate for Online and making digital solutions that feel intuitive.", comment: ""))
+                            Text(NSLocalizedString("Hi there! 👋 I'm the author of OnlineEvents.\nYou can probably catch me A4", comment: ""))
                                 .font(.caption)
                                 .foregroundColor(Color(hex: "#0D5474").opacity(0.7))
                         }
