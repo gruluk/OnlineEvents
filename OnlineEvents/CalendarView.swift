@@ -73,18 +73,26 @@ struct CalendarView: View {
             }
 
             // Dates grid
+            // Dates grid
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 15) {
                 ForEach(month, id: \.self) { day in
                     if day.isEmpty {
                         Text("")
                             .frame(width: 40, height: 40)
                     } else {
-                        VStack {
+                        VStack(spacing: 4) { // Adjust the spacing as needed
                             Spacer()
                             Text(day)
-                            Circle()
-                                .frame(width: 10, height: 10)
-                                .foregroundColor(dayHasEvent(day: day) ? Color(hex: "#0D5474") : .clear)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            if dayHasEvent(day: day) {
+                                Circle()
+                                    .frame(width: 10, height: 10)
+                                    .foregroundColor(Color(hex: "#0D5474"))
+                            } else {
+                                Circle()
+                                    .frame(width: 10, height: 10)
+                                    .foregroundColor(.clear)
+                            }
                             Spacer()
                         }
                         .frame(width: 40, height: 40)
