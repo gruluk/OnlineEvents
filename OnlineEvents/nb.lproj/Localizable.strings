@@ -7,6 +7,9 @@
 */
 
 "Upcoming Registrations" = "Kommende Registreringer";
+"You have no upcoming notifications" = "Du har ingen kommmende påminnelser";
+"Go in to an event that has a registration and make a notification" = "Gå til et arrangement som har en registrering og lag en påminnelse";
+
 "Registrations" = "Registreringer";
 "Events" = "Arrangementer";
 "Scheduled for: " = "Planlagt: ";
@@ -28,7 +31,7 @@
 "The selected reminder time has already passed." = "Den valgte påminnelsestiden har allerede passert.";
 "OK" = "OK";
 "Enable Notifications" = "Slå på påminnelser";
-"Please enable notifications in the phone settings to set a reminder." = "Aktiver varsler i mobil-innstillinger for å angi en påminnelse.";
+"Please enable notifications in settings to set a reminder." = "Aktiver varsler i mobil-innstillinger for å angi en påminnelse.";
 
 
 "Registration start has already passed" = "Registreringsstart har allerede passert";

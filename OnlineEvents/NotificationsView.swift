@@ -25,17 +25,34 @@ struct NotificationsView: View {
                 .padding()
 
             List {
-                ForEach(viewModel.notifications, id: \.identifier) { request in
-                    VStack(alignment: .leading) {
-                        Text(request.content.title)
-                            .font(.headline)
-                        Text(request.content.body)
-                        Text(String(format: NSLocalizedString("Scheduled for: %@", comment: "Scheduled date and time"), viewModel.formatTriggerDate(request)))
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                if viewModel.notifications.isEmpty {
+                    // Display message within the list when there are no notifications
+                    VStack {
+                        Text(NSLocalizedString("You have no upcoming notifications", comment: ""))
+                            .font(.title2)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(hex: "#0D5474")) // Changed to primary for better visibility in List
+                            .padding(.bottom, 10)
+
+                        Text(NSLocalizedString("Go in to an event that has a registration and make a notification", comment: ""))
+                            .font(.body)
+                            .foregroundColor(Color(hex: "#0D5474")) // Changed to primary for better visibility in List
+                            .multilineTextAlignment(.center)
                     }
+                    .listRowBackground(Color.clear) // Optional: Clear the list row background
+                } else {
+                    ForEach(viewModel.notifications, id: \.identifier) { request in
+                        VStack(alignment: .leading) {
+                            Text(request.content.title)
+                                .font(.headline)
+                            Text(request.content.body)
+                            Text(String(format: NSLocalizedString("Scheduled for: %@", comment: "Scheduled date and time"), viewModel.formatTriggerDate(request)))
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .onDelete(perform: deleteNotification)
                 }
-                .onDelete(perform: deleteNotification)
             }
         }
         .background(Color(hex: "#0D5474"))
