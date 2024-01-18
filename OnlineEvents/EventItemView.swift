@@ -61,11 +61,17 @@ struct EventItemView: View {
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
                         Text(event.title)
-                            .font(.headline)
+                            .modifier(DynamicFontSizeModifier(text: event.title))
                             .foregroundColor(.black)
+                            .multilineTextAlignment(.leading) // Align text to the leading edge
+                            .lineLimit(nil)
+                            .bold()
 
                         dateTimeView
+                            .modifier(DynamicFontSizeModifier(text: event.title))
                             .foregroundColor(.black)
+                            .multilineTextAlignment(.leading) // Align text to the leading edge
+                            .lineLimit(nil)
                     }
                     
                     Spacer()
@@ -118,5 +124,16 @@ struct EventItemView: View {
         } else {
             return NSLocalizedString("Invalid Date", comment: "")
         }
+    }
+}
+
+struct DynamicFontSizeModifier: ViewModifier {
+    var text: String
+
+    func body(content: Content) -> some View {
+        let length = text.count
+        let fontSize: CGFloat = length > 30 ? 14 : 18  // Adjust these values as needed
+
+        return content.font(.system(size: fontSize))
     }
 }

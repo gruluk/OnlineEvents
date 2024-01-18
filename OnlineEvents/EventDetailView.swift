@@ -25,21 +25,43 @@ struct EventDetailView: View {
                         .aspectRatio(contentMode: .fit)
                     }
                     
-                    VStack(spacing: 15) {
-                        Text(formatDate(event.eventStart))
-                            .font(.subheadline)
-                            .foregroundColor(.black)
-                        
-                        Image(systemName: "arrow.down")
-                            .foregroundColor(.gray)
-                        
-                        Text(formatDate(event.eventEnd))
-                            .font(.subheadline)
-                            .foregroundColor(.black)
+                    // Circles with Start and End Times
+                    VStack {
+                        HStack {
+                            VStack{
+                                Circle()
+                                    .fill(Color(hex: "#0D5474"))
+                                    .frame(width: 20, height: 20)
+                                Text(formatTime(event.eventStart))
+                                    .font(.headline) // Larger font for the time
+                                    .foregroundColor(Color(hex: "#0D5474"))
+                                Text(formatDate(event.eventStart))
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+                            
+                            Spacer()
+                            
+                            DottedLine()
+                            
+                            Spacer()
+                            
+                            VStack {
+                                Circle()
+                                    .fill(Color(hex: "#0D5474"))
+                                    .frame(width: 20, height: 20)
+                                
+                                Text(formatTime(event.eventEnd))
+                                    .font(.headline)
+                                    .foregroundColor(Color(hex: "#0D5474"))
+                                
+                                Text(formatDate(event.eventEnd))
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+                        }
                     }
                     .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
                     .frame(maxWidth: .infinity, alignment: .center)
                     
                     if let attendance = event.attendanceEvent, let maxCapacity = attendance.maxCapacity, let numberOfSeatsTaken = attendance.numberOfSeatsTaken {
@@ -158,16 +180,27 @@ struct EventDetailView: View {
             .animation(.easeInOut(duration: 0.5), value: showSuccessToast) // Animate opacity change
     }
 
+    func formatTime(_ dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+
+        if let date = formatter.date(from: dateString) {
+            formatter.dateFormat = "HH:mm"
+            return formatter.string(from: date)
+        } else {
+            return NSLocalizedString("Unknown Time", comment: "")
+        }
+    }
+
     func formatDate(_ dateString: String) -> String {
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
 
-        let outputFormatter = DateFormatter()
-        // Removed the year component from the format
-        outputFormatter.dateFormat = "E, d MMM HH:mm"
-
-        if let date = inputFormatter.date(from: dateString) {
-            return outputFormatter.string(from: date)
+        if let date = formatter.date(from: dateString) {
+            formatter.dateFormat = "E, d. MMM" // Adjusted format
+            return formatter.string(from: date)
         } else {
             return NSLocalizedString("Unknown Date", comment: "")
         }
@@ -181,3 +214,24 @@ struct EventDetailView: View {
         return registrationStartDate > Date()
     }
 }
+
+
+// Custom Dotted Line View
+struct DottedLine: View {
+    var body: some View {
+        GeometryReader { geometry in
+            Path { path in
+                let width = geometry.size.width
+                let height = geometry.size.height
+                // Adjust the y value to account for the circle's radius and stroke width
+                let centerY = height / 2 - 25 // Assuming the circle's radius plus the circle's stroke width is 10
+                path.move(to: CGPoint(x: 0, y: centerY))
+                path.addLine(to: CGPoint(x: width, y: centerY))
+            }
+            .stroke(style: StrokeStyle(lineWidth: 1, lineCap: .round, dash: [5]))
+            .foregroundColor(.gray)
+        }
+        .frame(height: 20) // Set the frame height equal to the circle diameter plus any stroke width
+    }
+}
+

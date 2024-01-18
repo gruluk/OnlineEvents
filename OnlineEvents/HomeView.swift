@@ -28,63 +28,85 @@ struct HomeView: View {
                         LoadingView()
                     } else {
                         // Upcoming Registrations
-                        HStack {
-                            Text(NSLocalizedString("Next Registrations", comment: "Section title for registrations"))
-                                .font(.title2)
-                                .foregroundColor(Color(hex: "#0D5474"))
-                                .bold()
-                            
-                            Spacer()
-                            
-                            NavigationLink(destination: UpcomingRegistrationsView()) {
-                                Text(NSLocalizedString("Show More", comment: "Link to show more registrations"))
+                        VStack(spacing: 20) {
+                            HStack {
+                                Text(NSLocalizedString("Next Registrations", comment: "Section title for registrations"))
+                                    .font(.title2)
                                     .foregroundColor(Color(hex: "#0D5474"))
                                     .bold()
-                            }
-                        }
-                        .padding(.horizontal)
-                        
-                        if viewModel.nextThreeRegistrations.isEmpty {
-                            Text(NSLocalizedString("No Upcoming Registrations", comment: ""))
-                                .foregroundColor(.gray)
-                                .italic()
-                        } else {
-                            ForEach(Array(viewModel.nextThreeRegistrations.enumerated()), id: \.element.id) { (index, event) in
-                                EventItemView(event: event, displayMode: .registrationTime)
-                                    .padding(.horizontal)
-
-                                if index < viewModel.nextThreeRegistrations.count - 1 {
-                                    Divider()
-                                        .padding(.horizontal)
+                                
+                                Spacer()
+                                
+                                NavigationLink(destination: UpcomingRegistrationsView()) {
+                                    Text(NSLocalizedString("Show More", comment: "Link to show more registrations"))
+                                        .foregroundColor(Color(hex: "#0D5474"))
+                                        .bold()
                                 }
                             }
+                            .padding(.horizontal)
+                            
+                            VStack {
+                                if viewModel.nextThreeRegistrations.isEmpty {
+                                    Text(NSLocalizedString("No Upcoming Registrations", comment: ""))
+                                        .foregroundColor(.gray)
+                                        .italic()
+                                } else {
+                                    ForEach(Array(viewModel.nextThreeRegistrations.enumerated()), id: \.element.id) { (index, event) in
+                                        EventItemView(event: event, displayMode: .registrationTime)
+                                            .padding(.horizontal)
+                                        
+                                        if index < viewModel.nextThreeRegistrations.count - 1 {
+                                            Divider()
+                                                .padding(.horizontal)
+                                        }
+                                    }
+                                }
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                            .padding(.top, 5)
+                            .padding(.bottom, 5)
+                            .padding([.leading, .trailing], 10) // Increase horizontal padding
                         }
 
                         // Upcoming Events
-                        HStack {
-                            Text(NSLocalizedString("Next Events", comment: "Section title for events"))
-                                .font(.title2)
-                                .foregroundColor(Color(hex: "#0D5474"))
-                                .bold()
-                            
-                            Spacer()
-                            
-                            NavigationLink(destination: UpcomingEventsView()) {
-                                Text(NSLocalizedString("Show More", comment: "Link to show more events"))
+                        VStack {
+                            HStack {
+                                Text(NSLocalizedString("Next Events", comment: "Section title for events"))
+                                    .font(.title2)
                                     .foregroundColor(Color(hex: "#0D5474"))
                                     .bold()
+                                
+                                Spacer()
+                                
+                                NavigationLink(destination: UpcomingEventsView()) {
+                                    Text(NSLocalizedString("Show More", comment: "Link to show more events"))
+                                        .foregroundColor(Color(hex: "#0D5474"))
+                                        .bold()
+                                }
                             }
-                        }
-                        .padding(.horizontal)
-                        
-                        ForEach(Array(viewModel.nextThreeEvents.enumerated()), id: \.element.id) { (index, event) in
-                            EventItemView(event: event, displayMode: .eventTime)
-                                .padding(.horizontal)
+                            .padding(.horizontal)
                             
-                            if index < viewModel.nextThreeEvents.count - 1 {
-                                Divider()
-                                    .padding(.horizontal)
+                            VStack {
+                                ForEach(Array(viewModel.nextThreeEvents.enumerated()), id: \.element.id) { (index, event) in
+                                    EventItemView(event: event, displayMode: .eventTime)
+                                        .padding(.horizontal)
+                                    
+                                    if index < viewModel.nextThreeEvents.count - 1 {
+                                        Divider()
+                                            .padding(.horizontal)
+                                    }
+                                }
                             }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                            .padding(.top, 5)
+                            .padding(.bottom, 5)
+                            .padding([.leading, .trailing], 10) // Increase horizontal padding
                         }
                         
                         // Career carousel
