@@ -64,19 +64,41 @@ struct EventDetailView: View {
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
                     
-                    if let attendance = event.attendanceEvent, let maxCapacity = attendance.maxCapacity, let numberOfSeatsTaken = attendance.numberOfSeatsTaken {
-                        HStack {
-                            Image(systemName: "person")
-                                .foregroundColor(.gray)
-                                .padding(.trailing, 5)
-                            
-                            Text("\(numberOfSeatsTaken)/\(maxCapacity)")
-                                .font(.subheadline)
+                    HStack(spacing: 20) { // Add spacing between the two VStacks
+
+                        // Attendance View
+                        VStack {
+                            Image(systemName: "person.fill")
+                                .foregroundColor(Color(hex: "#0D5474"))
+
+                            if let attendance = event.attendanceEvent, let maxCapacity = attendance.maxCapacity, let numberOfSeatsTaken = attendance.numberOfSeatsTaken {
+                                Text("\(numberOfSeatsTaken)/\(maxCapacity)")
+                                    .font(.subheadline)
+                            } else {
+                                Text("?")
+                                    .font(.subheadline)
+                            }
                         }
                         .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                        .frame(maxWidth: .infinity, alignment: .center)
+
+                        Divider().frame(height: 50)
+
+                        // Location View
+                        VStack {
+                            Image(systemName: "location.fill")
+                                .foregroundColor(Color(hex: "#0D5474"))
+                            
+                            if !event.location.isEmpty {
+                                Text(event.location)
+                                    .font(.subheadline)
+                                    .multilineTextAlignment(.center) // Ensure text is centered if it wraps
+                            } else {
+                                Text("?")
+                                    .font(.subheadline)
+                            }
+                        }
+                        .padding()
                         .frame(maxWidth: .infinity, alignment: .center)
                     }
                     

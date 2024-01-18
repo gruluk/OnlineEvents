@@ -49,8 +49,8 @@ struct ReminderSheetView: View {
                     .padding()
             }
         }
-        .frame(height: 300)
-        .presentationDetents([.height(250)])
+        .frame(height: 500)
+        .presentationDetents([.height(300)])
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text(NSLocalizedString("Invalid Reminder Time", comment: "Alert title for invalid reminder")),
