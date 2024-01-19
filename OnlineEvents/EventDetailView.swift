@@ -1,4 +1,5 @@
 import SwiftUI
+import MarkdownUI
 
 struct EventDetailView: View {
     var event: Event
@@ -148,7 +149,7 @@ struct EventDetailView: View {
                     Divider()
                     
                     // Event description
-                    Text(event.description)
+                    Markdown(event.description)
                         .font(.body)
                     
                     // Webpage
