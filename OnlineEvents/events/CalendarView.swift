@@ -30,7 +30,7 @@ struct CalendarView: View {
         let firstDayOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: currentDate))!
         
         var calendar = Calendar.current
-        calendar.firstWeekday = 2 // Set Monday as the first day of the week
+        calendar.firstWeekday = 2 // Monday as the first day of the week
         let firstWeekday = calendar.component(.weekday, from: firstDayOfMonth)
         
         var offset = firstWeekday - calendar.firstWeekday
@@ -195,7 +195,7 @@ struct CalendarView: View {
         } else if isToday(day: day) {
             return Color(hex: "#0D5474")
         } else if isDateInPast(day: day) {
-            return Color.gray.opacity(0.8) // Darker gray for past dates
+            return Color.gray.opacity(0.8)
         } else {
             return Color.gray.opacity(0.3)
         }

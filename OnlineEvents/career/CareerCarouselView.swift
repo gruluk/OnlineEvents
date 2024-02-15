@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Displays a horizontally scrolling carousel of career opportunities.
 struct CareerCarouselView: View {
     var careerOpportunities: [CareerOpportunity]
 
@@ -16,30 +17,21 @@ struct CareerCarouselView: View {
     }
 }
 
+/// A view representing a single career opportunity in the carousel.
 struct CareerOpportunityView: View {
     var opportunity: CareerOpportunity
     @State private var uiImage: UIImage?
 
     var body: some View {
         Button(action: {
+            // Action to open the career opportunity link.
             openLink(opportunityId: opportunity.id)
         }) {
             VStack(alignment: .leading) {
-                if let uiImage = self.uiImage {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 100)
-                } else {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 100)
-                        .foregroundColor(.gray)
-                        .onAppear {
-                            loadImage(from: opportunity.company.image.xs)
-                        }
-                }
+                // Display the company's logo or a placeholder image.
+                companyLogoView()
+                
+                // Display the title of the career opportunity.
                 Text(opportunity.title)
                     .font(.footnote)
                     .multilineTextAlignment(.center)
@@ -52,14 +44,14 @@ struct CareerOpportunityView: View {
             .background(Color.white)
             .cornerRadius(10)
             .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
-            .padding(.top, 5)
-            .padding(.bottom, 5)
+            .padding(.vertical, 5)
         }
     }
-
+    
+    /// Loads the company's logo image from a URL string.
     private func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else {
-            print("Invalid URL")
+            print("Invalid URL for company image")
             return
         }
         DispatchQueue.global().async {
@@ -71,8 +63,30 @@ struct CareerOpportunityView: View {
         }
     }
 
+    /// Opens the specific career opportunity link.
     private func openLink(opportunityId: Int) {
         guard let url = URL(string: "https://online.ntnu.no/career/\(opportunityId)") else { return }
         UIApplication.shared.open(url)
+    }
+
+    /// Returns a view for the company's logo, either loaded from the URL or a placeholder.
+    private func companyLogoView() -> some View {
+        Group {
+            if let uiImage = self.uiImage {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+                    .foregroundColor(.gray)
+                    .onAppear {
+                        loadImage(from: opportunity.company.image.xs)
+                    }
+            }
+        }
     }
 }

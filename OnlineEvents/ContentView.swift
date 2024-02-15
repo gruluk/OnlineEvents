@@ -1,6 +1,7 @@
 import SwiftUI
 import UserNotifications
 
+// Extension to simplify UserDefaults usage for showing the welcome screen.
 extension UserDefaults {
     var welcomeScreenShown: Bool {
         get {
@@ -13,33 +14,38 @@ extension UserDefaults {
 }
 
 struct ContentView: View {
-    @StateObject var viewModel = EventViewModel()
-    @State private var selectedTab: Int = 0
+    @StateObject var viewModel = EventViewModel() // ViewModel for managing event data.
+    @State private var selectedTab: Int = 0 // Tracks the currently selected tab.
+    
+    // Tracks whether the onboarding process has been completed to decide which view to show.
     @State private var onboardingCompleted: Bool = UserDefaults.standard.welcomeScreenShown
 
+    // Request permission for notifications when the app is first launched.
     func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if granted {
-                print("Permission granted")
+                print("Permission granted for notifications.")
             } else if let error = error {
-                print("Error: \(error.localizedDescription)")
+                print("Error requesting notifications permission: \(error.localizedDescription)")
             }
         }
     }
     
     init() {
-        // Apply the color to the tab items
+        // Customize the appearance of the tab bar.
         UITabBar.appearance().tintColor = UIColor(Color(hex: "#0D5474"))
     }
 
     var body: some View {
         if !onboardingCompleted {
+            // Show the onboarding view if the onboarding process has not been completed.
             OnboardingView(onboardingCompleted: $onboardingCompleted, onDone: requestNotificationPermission)
         } else {
+            // Main content view with a tab bar interface.
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tabItem {
-                        Label(NSLocalizedString("Home", comment: "Tab title for registrations"), systemImage: "house")
+                        Label(NSLocalizedString("Home", comment: "Tab title for home"), systemImage: "house")
                     }
                     .tag(0)
                 
@@ -49,11 +55,12 @@ struct ContentView: View {
                     }
                     .tag(3)
             }
-            .accentColor(Color(hex: "#0D5474"))
+            .accentColor(Color(hex: "#0D5474")) // Sets the accent color for the TabView.
         }
     }
 }
 
+// Extension to provide a convenient initializer for Colors using hex values.
 extension Color {
     init(hex: String) {
         let scanner = Scanner(string: hex)
@@ -69,6 +76,6 @@ extension Color {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().accentColor(Color(hex: "#0D5474"))
+        ContentView().accentColor(Color(hex: "#0D5474")) // Preview the ContentView with a specific accent color.
     }
 }

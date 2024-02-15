@@ -34,7 +34,7 @@ struct EventDetailView: View {
                                     .fill(Color(hex: "#0D5474"))
                                     .frame(width: 20, height: 20)
                                 Text(formatTime(event.eventStart))
-                                    .font(.headline) // Larger font for the time
+                                    .font(.headline)
                                     .foregroundColor(Color(hex: "#0D5474"))
                                 Text(formatDate(event.eventStart))
                                     .font(.subheadline)
@@ -257,4 +257,3 @@ struct DottedLine: View {
         .frame(height: 20) // Set the frame height equal to the circle diameter plus any stroke width
     }
 }
-
