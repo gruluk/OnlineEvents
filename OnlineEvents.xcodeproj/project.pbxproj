@@ -167,6 +167,7 @@
 		E6C9ECAD2B41B69A003F107A = {
 			isa = PBXGroup;
 			children = (
+				E63756782B7E54240016E23C /* README.md */,
 				E6C9ECB82B41B69A003F107A /* OnlineEvents */,
 				E6C9ECC92B41B69B003F107A /* OnlineEventsTests */,
 				E6C9ECD32B41B69B003F107A /* OnlineEventsUITests */,
@@ -188,7 +189,6 @@
 			children = (
 				E69CFA952B51605900B37B5E /* Info.plist */,
 				E6C9ECB92B41B69A003F107A /* OnlineEventsApp.swift */,
-				E63756782B7E54240016E23C /* README.md */,
 				E6C9ECBB2B41B69A003F107A /* ContentView.swift */,
 				E6BF36A22B4458B000E0B4D2 /* KioskView.swift */,
 				E6C9ECF72B424656003F107A /* HomeView.swift */,
