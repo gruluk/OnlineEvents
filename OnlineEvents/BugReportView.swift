@@ -30,7 +30,7 @@ struct BugReportView: View {
         ScrollView {
             VStack(spacing: 20) {
                 HStack {
-                    Image("Graf")
+                    Image("NewIcon")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 80, height: 80)

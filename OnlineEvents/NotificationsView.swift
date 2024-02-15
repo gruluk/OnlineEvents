@@ -26,20 +26,19 @@ struct NotificationsView: View {
 
             List {
                 if viewModel.notifications.isEmpty {
-                    // Display message within the list when there are no notifications
                     VStack {
                         Text(NSLocalizedString("You have no upcoming notifications", comment: ""))
                             .font(.title2)
                             .multilineTextAlignment(.center)
-                            .foregroundColor(Color(hex: "#0D5474")) // Changed to primary for better visibility in List
+                            .foregroundColor(Color(hex: "#0D5474"))
                             .padding(.bottom, 10)
 
                         Text(NSLocalizedString("Go in to an event that has a registration and make a notification", comment: ""))
                             .font(.body)
-                            .foregroundColor(Color(hex: "#0D5474")) // Changed to primary for better visibility in List
+                            .foregroundColor(Color(hex: "#0D5474"))
                             .multilineTextAlignment(.center)
                     }
-                    .listRowBackground(Color.clear) // Optional: Clear the list row background
+                    .listRowBackground(Color.clear)
                 } else {
                     ForEach(viewModel.notifications, id: \.identifier) { request in
                         VStack(alignment: .leading) {

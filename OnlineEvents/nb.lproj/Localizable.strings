@@ -99,3 +99,9 @@
 "Developers" = "Utviklere";
 "Hi there! 👋 I'm the author of OnlineEvents.\nYou can probably catch me A4" = "Heisann! 👋 Jeg er forfatter av  OnlineEvents.\nDu finner meg på A4";
 
+
+/* UpdateInfoView translations */
+"What's New" = "Hva er nytt";
+"We have a new app icon!\n\nOnline is making an official app! Please check it out on App Store and Play Store when it comes out. \n\nOnlineEvents was never supposed to be an official Online app, only a hobby project to make Online events easier for everyone!\n\nI appreciate the feedback and hope the app is useful <3 \n\n - Luka" = "Vi har et nytt appikon!\n\nOnline lager en offisiell app! Sjekk den ut på App Store og Play Store når den kommer ut. \n\nOnlineEvents var aldri ment å være en offisiell Online-app, bare et hobbyprosjekt for å gjøre Online-arrangementer enklere for alle!\n\nJeg setter pris på tilbakemeldingene og håper appen er nyttig <3 \n\n - Luka";
+"Got it!" = "Forstått!";
+

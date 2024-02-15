@@ -8,6 +8,9 @@ struct HomeView: View {
     @State private var showingBugReportSheet = false
     @State private var showSpeechBubble = false
     @State private var currentBubbleText = ""
+    @State private var showingUpdateInfo = false
+    
+    private let currentAppVersion = "1.1.0" // Update with each app version
     
     init() {
         // Apply to all navigation bars in the app
@@ -158,6 +161,11 @@ struct HomeView: View {
                     NotificationsView()
                 }
             }
+            .sheet(isPresented: $showingUpdateInfo) {
+                UpdateInfoView(dismissAction: {
+                    self.showingUpdateInfo = false
+                })
+            }
             .navigationTitle(NSLocalizedString("Home", comment: "Title for the Home view"))
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -197,6 +205,7 @@ struct HomeView: View {
                 viewModel.fetchEvents()
                 careerViewModel.fetchCareerOpportunities()
                 notificationViewModel.fetchNotifications()
+                checkForUpdates()
             }
         }
         .accentColor(Color(hex: "#0D5474"))
@@ -204,6 +213,14 @@ struct HomeView: View {
     
     private func refreshNotifications() {
         notificationViewModel.fetchNotifications()
+    }
+    
+    private func checkForUpdates() {
+        let viewedVersion = UserDefaults.standard.string(forKey: "viewedUpdateVersion")
+        if viewedVersion != currentAppVersion {
+            showingUpdateInfo = true
+            UserDefaults.standard.set(currentAppVersion, forKey: "viewedUpdateVersion")
+        }
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63756722B7D4BFD0016E23C /* UpdateInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63756712B7D4BFD0016E23C /* UpdateInfoView.swift */; };
 		E65D192A2B4485C100A68346 /* BugReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65D19292B4485C100A68346 /* BugReportView.swift */; };
 		E65D192D2B44A42700A68346 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E65D192F2B44A42700A68346 /* Localizable.strings */; };
 		E666ECC12B4D6FA90029C784 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E666ECC02B4D6FA90029C784 /* TestView.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E63756712B7D4BFD0016E23C /* UpdateInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfoView.swift; sourceTree = "<group>"; };
 		E65D19292B4485C100A68346 /* BugReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugReportView.swift; sourceTree = "<group>"; };
 		E65D192E2B44A42700A68346 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E65D19302B44A44D00A68346 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				E6FA0DA72B4316C000BD4AA0 /* NotificationViewModel.swift */,
 				E6FA0DA92B4316DB00BD4AA0 /* NotificationsView.swift */,
 				E6C9ECF72B424656003F107A /* HomeView.swift */,
+				E63756712B7D4BFD0016E23C /* UpdateInfoView.swift */,
 				E67F6A532B4D583B002A9626 /* CareerOpportunity.swift */,
 				E67F6A552B4D59F8002A9626 /* CareerViewModel.swift */,
 				E67F6A512B4D57CC002A9626 /* CareerCarouselView.swift */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FA0DA62B43116800BD4AA0 /* ReminderSheetView.swift in Sources */,
+				E63756722B7D4BFD0016E23C /* UpdateInfoView.swift in Sources */,
 				E6C9ECBC2B41B69A003F107A /* ContentView.swift in Sources */,
 				E67F6A542B4D583B002A9626 /* CareerOpportunity.swift in Sources */,
 				E6C9ECF22B41C972003F107A /* UpcomingEventsView.swift in Sources */,
@@ -448,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Luka.OnlineEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -479,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Luka.OnlineEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
