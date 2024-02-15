@@ -14,7 +14,7 @@ struct HomeView: View {
     @State private var currentBubbleText = "" // Text content for the speech bubble
     @State private var showingUpdateInfo = false // Controls the presentation of the update info sheet
     
-    private let currentAppVersion = "1.1.0" // Current version of the app, used to determine if the update info should be shown
+    private let currentAppVersion = "1.2.0" // Current version of the app, used to determine if the update info should be shown
     
     init() {
         // Customization of navigation bar appearance for the entire app
